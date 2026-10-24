@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Expense Tracker</title>
+    <link rel="stylesheet" href="hack.css">
+</head>
+<body>
+<header>
+    <div>
+        <h1>Smart Expense Tracker</h1>
+        <p>Track your money. Plan your future.</p>
+    </div>
+    <button onclick="openForm()">+ Add Transaction</button>
+</header>
+<main class="container">
+    <section class="summary">
+        <div class="card">
+            <p>Total Income</p>
+            <h2 id="income">₹0.00</h2>
+        </div>
+        <div class="card">
+            <p>Total Expenses</p>
+            <h2 id="expenses">₹0.00</h2>
+        </div>
+        <div class="card">
+            <p>Available Balance</p>
+            <h2 id="balance">₹0.00</h2>
+        </div>
+        <div class="card">
+            <p>Total Transactions</p>
+            <h2 id="count">0</h2>
+        </div>
+    </section>
+    <section class="panel" id="formPanel" hidden>
+        <h2 id="formTitle">Add Transaction</h2>
+        <form id="expenseForm">
+            <label>Transaction Type</label>
+            <select id="type" required>
+                <option value="expense">Expense</option>
+                <option value="income">Income</option>
+            </select>
+            <label>Amount (₹)</label>
+            <input type="number" id="amount"
+                   min="0.01" step="0.01"
+                   placeholder="Enter amount" required>
+            <label>Category</label>
+            <select id="category" required>
+                <option>Food</option>
+                <option>Transport</option>
+                <option>Shopping</option>
+                <option>Education</option>
+                <option>Bills</option>
+                <option>Health</option>
+                <option>Salary</option>
+                <option>Other</option>
+            </select>
+            <label>Date</label>
+            <input type="date" id="date" required>
+            <label>Description</label>
+            <input type="text" id="description"
+                   placeholder="Example: College fees">
+            <div class="form-buttons">
+                <button type="submit" id="saveButton">
+                    Save Transaction
+                </button>
+                <button type="button" class="cancel"
+                        onclick="closeForm()">Cancel</button>
+            </div>
+        </form>
+    </section>
+    <section class="panel">
+        <h2>Monthly Budget</h2>
+        <div class="budget-row">
+            <input type="number" id="budget"
+                   placeholder="Enter monthly budget" min="1">
+            <button onclick="setBudget()">Set Budget</button>
+        </div>
+        <p id="budgetInfo">Set your budget to track spending.</p>
+
+        <div class="progress">
+            <div id="progressBar"></div>
+        </div>
+        <p id="budgetMessage"></p>
+    </section>
+    <section class="panel">
+        <h2>Transaction History</h2>
+        <div class="filters">
+            <input type="search" id="search"
+                   placeholder="Search transactions...">
+            <select id="filterType">
+                <option value="all">All Types</option>
+                <option value="income">Income</option>
+                <option value="expense">Expenses</option>
+            </select>
+        </div>
+        <div class="table-box">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionList"></tbody>
+            </table>
+        </div>
+        <p id="emptyMessage">No transactions added yet.</p>
+    </section>
+    <section class="panel">
+        <h2>Spending Analysis</h2>
+        <p class="muted">Category-wise expense report</p>
+        <div class="chart-container">
+            <canvas id="expenseChart"></canvas>
+        </div>
+    </section>
+    <section class="panel savings">
+        <h2>Smart Savings Tip</h2>
+        <p id="tip">Add your transactions to see your spending summary.</p>
+    </section>
+</main>
+<footer>
+    <p>Personal Expense Tracker </p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="hack.js"></script>
+</body>
+</html>

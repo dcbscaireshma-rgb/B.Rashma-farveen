@@ -1,0 +1,218 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2faf5;
+    color: #243b30;
+}
+header {
+    background: #ffffff;
+    color: #24543b;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 3px 12px #dcebe1;
+    border-bottom: 3px solid #c8e8d2;
+}
+header h1, header h2 {
+    color: #24543b;
+}
+header p {
+    color: #718579;
+}
+header button {
+    background: #27965b;
+}
+nav {
+    background: #e4f5e9;
+    padding: 15px 5%;
+    box-shadow: 0 2px 8px #dcebe1;
+}
+button {
+    background: #27965b;
+    color: white;
+    border: none;
+    padding: 11px 16px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin: 4px;
+    transition: 0.2s;
+}
+button:hover {
+    background: #197647;
+    transform: translateY(-1px);
+}
+nav button {
+    background: #ffffff;
+    color: #267749;
+    border: 1px solid #c8e8d2;
+}
+nav button:hover {
+    background: #ccebd6;
+    color: #185b35;
+}
+.container {
+    padding: 25px 5%;
+}
+section {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 14px #dcebe1;
+    border: 1px solid #e1f0e5;
+}
+section h2 {
+    color: #24543b;
+}
+section[hidden], .modal[hidden] {
+    display: none !important;
+}
+.cards {
+    display: flex;
+    gap: 20px;
+    margin: 25px 0;
+}
+.card {
+    flex: 1;
+    padding: 20px;
+    border-radius: 12px;
+    background: #effaf2;
+    border: 1px solid #d8efdf;
+    border-left: 5px solid #55b879;
+}
+.card h3 {
+    color: #718579;
+}
+.card h2 {
+    font-size: 25px;
+    color: #24543b;
+}
+#income {
+    color: #16834b;
+}
+#expense {
+    color: #dc6262;
+}
+input, select {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px;
+    border: 1px solid #cfe3d5;
+    border-radius: 7px;
+    box-sizing: border-box;
+    background: #fcfffd;
+    color: #243b30;
+    font-size: 14px;
+}
+input:focus, select:focus {
+    outline: none;
+    border-color: #55b879;
+    box-shadow: 0 0 0 3px #e1f5e7;
+}
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #365c45;
+}
+.transaction {
+    padding: 15px;
+    border-bottom: 1px solid #e4efe7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.transaction:hover {
+    background: #f6fcf7;
+}
+.income-text {
+    color: #16834b;
+    font-weight: bold;
+}
+.expense-text {
+    color: #dc6262;
+    font-weight: bold;
+}
+.modal {
+    position: fixed;
+    inset: 0;
+    background: #183d2bb3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+.form {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 400px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 35px #183d2b40;
+}
+.close {
+    float: right;
+    background: #e5f5e9;
+    color: #267749;
+}
+
+#chart {
+    margin-top: 20px;
+    background: #f5fcf7;
+    border-radius: 12px;
+    padding: 12px;
+}
+.bar {
+    height: 18px;
+    background: #55b879;
+    border-radius: 10px;
+    margin: 8px 0 20px;
+}
+.budget {
+    background: #f0faf3;
+    border-left: 5px solid #55b879;
+}
+p {
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 15px;
+        flex-wrap: wrap;
+    }
+    header h2 {
+        font-size: 18px;
+    }
+    header button {
+        padding: 9px;
+    }
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+    nav button {
+        flex: 1;
+    }
+    .container {
+        padding: 15px;
+    }
+    section {
+        padding: 15px;
+    }
+    .cards {
+        flex-direction: column;
+    }
+    .transaction {
+        flex-wrap: wrap;
+    }
+}
